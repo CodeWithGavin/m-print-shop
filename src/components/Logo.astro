@@ -1,10 +1,10 @@
 ---
 interface props {
-    tone?: 'ink' | 'paper';
+	tone?: 'ink' | 'paper';
 }
 
 const { tone = 'ink' } = Astro.props;
-const border = tone === 'ink'  ? 'border-ink' : 'border-paper';
+const border = tone === 'ink' ? 'border-ink' : 'border-paper';
 const shadow = tone === 'ink' ? 'shadow-pop' : '';
 ---
 

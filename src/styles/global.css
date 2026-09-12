@@ -43,8 +43,12 @@
 
 /* Marquee ticker for the stats / "as printed" bands. */
 @keyframes ps-marquee {
-	from { transform: translateX(0); }
-	to { transform: translateX(-50%); }
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
 }
 .animate-marquee {
 	animation: ps-marquee 32s linear infinite;
@@ -63,7 +67,9 @@
    with it (an inline `transform` would otherwise clobber the hover). */
 .design-tilt {
 	transform: rotate(var(--rot, 0deg));
-	transition: transform 0.22s ease, box-shadow 0.22s ease;
+	transition:
+		transform 0.22s ease,
+		box-shadow 0.22s ease;
 	will-change: transform;
 }
 .design-tilt:hover {
@@ -76,8 +82,14 @@
 @supports (animation-timeline: view()) {
 	@media (prefers-reduced-motion: no-preference) {
 		@keyframes ps-reveal {
-			from { opacity: 0; transform: translateY(28px); }
-			to { opacity: 1; transform: none; }
+			from {
+				opacity: 0;
+				transform: translateY(28px);
+			}
+			to {
+				opacity: 1;
+				transform: none;
+			}
 		}
 		.reveal {
 			animation: ps-reveal both linear;
@@ -101,7 +113,11 @@ body::after {
 
 /* Respect reduced-motion. */
 @media (prefers-reduced-motion: reduce) {
-	.animate-marquee { animation: none; }
+	.animate-marquee {
+		animation: none;
+	}
 	.design-tilt,
-	.design-tilt:hover { transform: none; }
+	.design-tilt:hover {
+		transform: none;
+	}
 }
